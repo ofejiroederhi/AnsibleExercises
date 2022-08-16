@@ -42,8 +42,3 @@
 - name: Executing mode
   shell: |
     pm2 start ~/web/index.js -f
-
-
-
-
-
