@@ -38,17 +38,15 @@ jobs:
       - checkout
       - add_ssh_keys:
               # You can get this ID in the section where you registered the SSH Key
-              fingerprints: ["47:d3:65:e1:1d:e6:a5:98:e2:ed:d3:63:d5:bb:d2:46"] 
+          fingerprints: ["47:d3:65:e1:1d:e6:a5:98:e2:ed:d3:63:d5:bb:d2:46"] 
       - run:
           name: Install Ansible
           command: |
             apk add --update ansible
-
       - run:
           name: Run Playbook and Configure server
           command: |
             ansible-playbook -i inventory.txt main-remote.yml
-
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
