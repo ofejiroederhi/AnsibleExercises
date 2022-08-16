@@ -1,47 +1,47 @@
-# ---
-# - name: "update apt packages."
-#   become: yes
-#   apt:
-#     update_cache: yes
+---
+- name: "update apt packages."
+  become: yes
+  apt:
+    update_cache: yes
 
-# - name: "upgrade packages"
-#   become: yes
-#   apt:
-#     upgrade: yes
+- name: "upgrade packages"
+  become: yes
+  apt:
+    upgrade: yes
 
-# - name: "remove dependencies not required"
-#   become: yes
-#   apt:
-#     autoremove: yes
+- name: "remove dependencies not required"
+  become: yes
+  apt:
+    autoremove: yes
 
-# - name: "install nodejs and npm"
-#   become: yes
-#   apt:
-#     name: ["nodejs","npm"]
-#     state: latest
-#     update_cache: yes
+- name: "install nodejs and npm"
+  become: yes
+  apt:
+    name: ["nodejs","npm"]
+    state: latest
+    update_cache: yes
 
-# - name: "install pm2"
-#   become: yes
-#   npm:
-#     name: pm2
-#     global: yes
-#     production: yes
-#     state: present
+- name: "install pm2"
+  become: yes
+  npm:
+    name: pm2
+    global: yes
+    production: yes
+    state: present
     
-# - name: "create directory"
-#   file:
-#     path: ~/web
-#     state: directory
+- name: "create directory"
+  file:
+    path: ~/web
+    state: directory
 
-# - name: "Copy index page"
-#   template:
-#     src: "files/index.js"
-#     dest: ~/web/index.js
+- name: "Copy index page"
+  template:
+    src: "files/index.js"
+    dest: ~/web/index.js
 
-# - name: Executing mode
-#   shell: |
-#     pm2 start ~/web/index.js -f
+- name: Executing mode
+  shell: |
+    pm2 start ~/web/index.js -f
 
 
 
