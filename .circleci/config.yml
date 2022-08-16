@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Run Playbook and Configure server
           command: |
-            ansible-playbook -i inventory.txt main-remote.yml --private-key 'EC2 Excercise.pem'
+            ansible-playbook -i inventory.txt main-remote.yml --private-key "EC2 Excercise.pem"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows...
