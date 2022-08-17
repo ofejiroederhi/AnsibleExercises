@@ -89,6 +89,10 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
+      - run:
+          name: Install openssh
+          command: |
+            apk add openssh
       - add_ssh_keys:
           fingerprints: ["30:1a:b3:f9:d3:95:98:73:a3:e2:15:77:82:78:d6:c2"] # You can get this ID in the section where you registered the SSH Key
       - run:
@@ -99,7 +103,7 @@ jobs:
       - run:
           name: Configure server
           command: |
-            ansible-playbook -i inventory.txt main4.yml --private-key udacity.pem
+            ansible-playbook -i inventory.txt main4.yml
 
   # Exercise: Smoke Testing/.
   smoke_test:
