@@ -101,7 +101,7 @@ jobs:
           command: |
             ansible-playbook -i inventory.txt main4.yml --private-key udacity.pem
 
-  # Exercise: Smoke Testing
+  # Exercise: Smoke Testing/.
   smoke_test:
     docker:
       - image: alpine:latest
